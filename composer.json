@@ -1,0 +1,61 @@
+{
+  "name": "konnco/laravel-rajaongkir",
+  "description": "Raja ongkir api wrapper for Laravel",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "php",
+    "rajaongkir",
+    "library",
+    "jne",
+    "tiki"
+  ],
+  "authors": [
+    {
+      "name": "Franky So",
+      "email": "frankyso.mail@gmail.com"
+    },
+    {
+      "name": "Ahmad Rizal Afani",
+      "email": "ahmadrizalafani@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.2.0",
+    "illuminate/contracts": "5.8.* || ^6.0",
+    "illuminate/database": "5.8.* || ^6.0",
+    "illuminate/support": "5.8.* || ^6.0"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "require-dev": {
+    "orchestra/testbench": "3.8.* || ^4.0",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Konnco\\RajaOngkir\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Konnco\\RajaOngkir\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Konnco\\RajaOngkir\\RajaOngkirServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "csfix": "php-cs-fixer fix --using-cache=no",
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html=build"
+  }
+}
