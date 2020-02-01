@@ -4,94 +4,105 @@ namespace Konnco\RajaOngkir\app;
 
 use Exception;
 
-abstract class Api {
-	protected $method;
-	protected $parameters;
-	protected $data;
-	protected $endPointAPI;
-	protected $overWriteOptions = [];
-	protected $apiKey;
+abstract class Api
+{
+    protected $method;
+    protected $parameters;
+    protected $data;
+    protected $endPointAPI;
+    protected $overWriteOptions = [];
+    protected $apiKey;
 
-	public function __construct(){
-		$this->endPointAPI = config('rajaongkir.end_point_api', 'http://rajaongkir.com/api/starter');
-		$this->apiKey = config('rajaongkir.api_key');
-	}
+    public function __construct()
+    {
+        $this->endPointAPI = config('rajaongkir.end_point_api', 'http://rajaongkir.com/api/starter');
+        $this->apiKey = config('rajaongkir.api_key');
+    }
 
-	public function all(){
-		return $this->GetData()->data;
-	}
+    public function all()
+    {
+        return $this->GetData()->data;
+    }
 
-	public function find($id){
-		$this->parameters = "?id=".$id;
-		return $this->GetData()->data;
-	}
+    public function find($id)
+    {
+        $this->parameters = '?id='.$id;
 
-	public function search($column, $searchKey){
-		$data = ( empty($this->data) ) ? $this->GetData()->data : $this->data;
+        return $this->GetData()->data;
+    }
 
-		$rowColumn = array_column($data, $column);
-		$s = preg_quote(ucwords($searchKey), '~');
-		$res = preg_grep('~' . $s . '~', $rowColumn);
-		$resKey = array_keys($res);
-		$temp = [];
-		foreach($data as $key => $val){
-			if(in_array($key, $resKey)){
-				array_push($temp, $val);
-			}
-		}
+    public function search($column, $searchKey)
+    {
+        $data = (empty($this->data)) ? $this->GetData()->data : $this->data;
 
-		$this->data = $temp;
+        $rowColumn = array_column($data, $column);
+        $s = preg_quote(ucwords($searchKey), '~');
+        $res = preg_grep('~'.$s.'~', $rowColumn);
+        $resKey = array_keys($res);
+        $temp = [];
+        foreach ($data as $key => $val) {
+            if (in_array($key, $resKey)) {
+                array_push($temp, $val);
+            }
+        }
 
-		return $this;
-	}
+        $this->data = $temp;
 
-	public function get(){
-		return $this->data;
-	}
+        return $this;
+    }
 
-	public function count(){
-		( empty($this->data) ) ? $this->GetData()->data : $this->data;
-		return count($this->data);
-	}
+    public function get()
+    {
+        return $this->data;
+    }
 
-	protected function GetData(){
-		$curl = curl_init();
+    public function count()
+    {
+        (empty($this->data)) ? $this->GetData()->data : $this->data;
 
-		$options = [
-			CURLOPT_URL => $this->endPointAPI."/".$this->method.$this->parameters,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => "",
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 30,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => "GET",
-			CURLOPT_HTTPHEADER => [
-				"key: ".$this->apiKey
-			],
-		];
+        return count($this->data);
+    }
 
-		foreach( $this->overWriteOptions as $key => $val){
-			$options[$key] = $val;
-		}
+    protected function GetData()
+    {
+        $curl = curl_init();
 
-		curl_setopt_array($curl, $options);
+        $options = [
+            CURLOPT_URL            => $this->endPointAPI.'/'.$this->method.$this->parameters,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING       => '',
+            CURLOPT_MAXREDIRS      => 10,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST  => 'GET',
+            CURLOPT_HTTPHEADER     => [
+                'key: '.$this->apiKey,
+            ],
+        ];
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+        foreach ($this->overWriteOptions as $key => $val) {
+            $options[$key] = $val;
+        }
 
-		curl_close($curl);
+        curl_setopt_array($curl, $options);
 
-		if ($err) {
-		 	throw new Exception($err, 1);	
-		} else {
-			$data = json_decode($response, true);
-			$code = $data['rajaongkir']['status']['code'];
-			if($code == 400){
-				throw new Exception($data['rajaongkir']['status']['description'], 1);		
-			}else{
-				$this->data = $data['rajaongkir']['results'];
-				return $this;
-			}
-		}
-	}
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            throw new Exception($err, 1);
+        } else {
+            $data = json_decode($response, true);
+            $code = $data['rajaongkir']['status']['code'];
+            if ($code == 400) {
+                throw new Exception($data['rajaongkir']['status']['description'], 1);
+            } else {
+                $this->data = $data['rajaongkir']['results'];
+
+                return $this;
+            }
+        }
+    }
 }
