@@ -50,7 +50,10 @@
     "laravel": {
       "providers": [
         "Konnco\\RajaOngkir\\RajaOngkirServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "RajaOngkir": "Konnco\\RajaOngkir\\RajaOngkirFacade"
+        }
     }
   },
   "scripts": {
