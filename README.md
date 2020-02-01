@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/konnco/laravel-rajaongkir/downloads)](https://packagist.org/packages/konnco/laravel-rajaongkir)
 [![Latest Unstable Version](https://poser.pugx.org/konnco/laravel-rajaongkir/v/unstable)](https://packagist.org/packages/konnco/laravel-rajaongkir)
 [![License](https://poser.pugx.org/konnco/laravel-rajaongkir/license)](https://packagist.org/packages/konnco/laravel-rajaongkir)
-[![StyleCI](https://github.styleci.io/repos/228747586/shield?branch=master)](https://github.styleci.io/repos/228747586)
+[![StyleCI](https://github.styleci.io/repos/237620279/shield?branch=master)](https://github.styleci.io/repos/237620279)
 
 This package is build based on the rizalafani package [rizalafani/rajaongkirlaravel](https://github.com/rizalafani/rajaongkirlaravel) that i think has been a long time not updated and maybe already abandon this project
 
