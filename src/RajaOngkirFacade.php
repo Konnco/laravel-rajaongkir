@@ -1,6 +1,6 @@
 <?php
 
-namespace rizalafani\rajaongkirlaravel;
+namespace Konnco\RajaOngkir;
 
 use Illuminate\Support\Facades\Facade;
 

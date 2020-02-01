@@ -1,10 +1,10 @@
 <?php
 
-namespace Konnco\rajaongkirlaravel;
+namespace Konnco\RajaOngkir;
 
-use Konnco\rajaongkirlaravel\app\Provinsi;
-use Konnco\rajaongkirlaravel\app\Kota;
-use Konnco\rajaongkirlaravel\app\Cost;
+use Konnco\RajaOngkir\app\Provinsi;
+use Konnco\RajaOngkir\app\Kota;
+use Konnco\RajaOngkir\app\Cost;
 
 class RajaOngkir {
 	public function Provinsi(){

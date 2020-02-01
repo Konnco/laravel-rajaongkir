@@ -1,6 +1,6 @@
 <?php
 
-namespace rizalafani\rajaongkirlaravel\app;
+namespace Konnco\RajaOngkir\app;
 
 class Cost extends Api {
 	public function __construct($attributes){

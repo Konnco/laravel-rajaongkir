@@ -1,6 +1,6 @@
 <?php
 
-namespace rizalafani\rajaongkirlaravel\app;
+namespace Konnco\RajaOngkir\app;
 
 class Kota extends Api {
 	protected $method = "city";
