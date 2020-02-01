@@ -2,9 +2,9 @@
 
 namespace Konnco\RajaOngkir;
 
-use Konnco\RajaOngkir\app\Provinsi;
-use Konnco\RajaOngkir\app\Kota;
 use Konnco\RajaOngkir\app\Cost;
+use Konnco\RajaOngkir\app\Kota;
+use Konnco\RajaOngkir\app\Provinsi;
 
 class RajaOngkir
 {
