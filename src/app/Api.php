@@ -26,7 +26,7 @@ abstract class Api
 
     public function find($id)
     {
-        $this->parameters = '?id=' . $id;
+        $this->parameters = '?id='.$id;
 
         return $this->GetData()->data;
     }
@@ -37,7 +37,7 @@ abstract class Api
 
         $rowColumn = array_column($data, $column);
         $s = preg_quote(ucwords($searchKey), '~');
-        $res = preg_grep('~' . $s . '~', $rowColumn);
+        $res = preg_grep('~'.$s.'~', $rowColumn);
         $resKey = array_keys($res);
         $temp = [];
         foreach ($data as $key => $val) {
@@ -68,15 +68,15 @@ abstract class Api
         $curl = curl_init();
 
         $options = [
-            CURLOPT_URL            => $this->endPointAPI . '/' . $this->method . $this->parameters,
+            CURLOPT_URL            => $this->endPointAPI.'/'.$this->method.$this->parameters,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_ENCODING       => '',
+            CURLOPT_MAXREDIRS      => 10,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST  => 'GET',
             CURLOPT_HTTPHEADER     => [
-                'key: ' . $this->apiKey,
+                'key: '.$this->apiKey,
             ],
         ];
 
