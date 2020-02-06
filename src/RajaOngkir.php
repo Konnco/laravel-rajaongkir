@@ -2,23 +2,29 @@
 
 namespace Konnco\RajaOngkir;
 
-use Konnco\RajaOngkir\app\Provinsi;
-use Konnco\RajaOngkir\app\Kota;
+use Konnco\RajaOngkir\app\Province;
+use Konnco\RajaOngkir\app\City;
+use Konnco\RajaOngkir\app\Subdistrict;
 use Konnco\RajaOngkir\app\Cost;
 
 class RajaOngkir
 {
-    public function Provinsi()
+    public function province()
     {
-        return new Provinsi();
+        return new Province();
     }
 
-    public function Kota()
+    public function city()
     {
-        return new Kota();
+        return new City();
     }
 
-    public function Cost($attributes)
+    public function subdistrict()
+    {
+        return new Subdistrict();
+    }
+
+    public function cost($attributes)
     {
         return new Cost($attributes);
     }

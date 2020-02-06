@@ -2,7 +2,7 @@
 
 namespace Konnco\RajaOngkir\app;
 
-class Provinsi extends Api
+class Province extends Api
 {
     protected $method = 'province';
 }

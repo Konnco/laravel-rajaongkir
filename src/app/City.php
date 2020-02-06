@@ -2,7 +2,7 @@
 
 namespace Konnco\RajaOngkir\app;
 
-class Kota extends Api
+class City extends Api
 {
     protected $method = 'city';
 
