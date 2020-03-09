@@ -6,6 +6,7 @@ use Konnco\RajaOngkir\app\Province;
 use Konnco\RajaOngkir\app\City;
 use Konnco\RajaOngkir\app\Subdistrict;
 use Konnco\RajaOngkir\app\Cost;
+use Konnco\RajaOngkir\app\Waybill;
 
 class RajaOngkir
 {
@@ -27,5 +28,10 @@ class RajaOngkir
     public function cost($attributes)
     {
         return new Cost($attributes);
+    }
+
+    public function waybill($attributes)
+    {
+        return new Waybill($attributes);
     }
 }

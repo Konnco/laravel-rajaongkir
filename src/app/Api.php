@@ -15,7 +15,7 @@ abstract class Api
 
     public function __construct()
     {
-        $this->endPointAPI = config('rajaongkir.end_point_api', 'https://api.rajaongkir.com/starter/province');
+        $this->endPointAPI = config('rajaongkir.end_point_api', 'https://api.rajaongkir.com/starter/');
         $this->apiKey = config('rajaongkir.api_key');
     }
 
@@ -99,7 +99,7 @@ abstract class Api
             if ($code == 400) {
                 throw new Exception($data['rajaongkir']['status']['description'], 1);
             } else {
-                $this->data = $data['rajaongkir']['results'];
+                $this->data = $data['rajaongkir'];
 
                 return $this;
             }

@@ -1,4 +1,4 @@
-# Laravel Onimage
+# Laravel RajaOngkir
 [![Build Status](https://travis-ci.org/Konnco/laravel-rajaongkir.svg?branch=master)](https://travis-ci.org/Konnco/laravel-rajaongkir)
 [![Latest Stable Version](https://poser.pugx.org/konnco/laravel-rajaongkir/v/stable)](https://packagist.org/packages/konnco/laravel-rajaongkir)
 [![Total Downloads](https://poser.pugx.org/konnco/laravel-rajaongkir/downloads)](https://packagist.org/packages/konnco/laravel-rajaongkir)
@@ -141,6 +141,7 @@ Documentasi akun [starter](http://rajaongkir.com/dokumentasi/starter)
 ## Authors
 [//]: contributor-faces
 <a href="https://github.com/frankyso"><img src="https://avatars.githubusercontent.com/u/5705520?v=3" title="frankyso" width="80" height="80"></a>
+<a href="https://github.com/ijalnasution"><img src="https://avatars.githubusercontent.com/u/17308059?v=3" title="frankyso" width="80" height="80"></a>
 <a href="https://github.com/frankyso"><img src="https://avatars.githubusercontent.com/u/4284114?v=3" title="rizalafani" width="80" height="80"></a>
 ## Contributing
 we appreciate all contributions, feel free to write some code or request package.
